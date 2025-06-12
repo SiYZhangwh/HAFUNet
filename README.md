@@ -7,5 +7,5 @@ Depth Estimation oN Synthetic Events - DENSE Dataset: https://rpg.ifi.uzh.ch/E2D
 
 #Pre-train Weights
 ==
-
+https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-maxx/maxvit_rmlp_small_rw_224_sw-6ef0ae4f.pth
 
