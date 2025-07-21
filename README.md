@@ -7,7 +7,5 @@ HAFUNet: A Hierarchical Attention Fusion Network for Monocular Depth Estimation 
 The Multi Vehicle Stereo Event Camera Dataset - MVSEC Dataset: https://daniilidis-group.github.io/mvsec/
 Depth Estimation On Synthetic Events - DENSE Dataset: https://rpg.ifi.uzh.ch/E2DEPTH.html
 
-#Pre-train Weights
-==
-https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-weights-maxx/maxvit_rmlp_small_rw_224_sw-6ef0ae4f.pth
+
 
