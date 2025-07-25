@@ -48,7 +48,6 @@ class ChannelEmbed(nn.Module):
         self.norm = norm_layer(out_channels)
         
     def forward(self, x):
-        # residual = self.residual(x)
         x = self.channel_embed(x)
         out = self.norm(x)
         return out
@@ -59,9 +58,11 @@ class fusion(nn.Module):
         self.out_channels = F_int
         self.residual = nn.Conv2d(F_g, F_int, kernel_size=1, bias=False)
         self.channel_embed = nn.Sequential(
-                        nn.Conv2d(F_g, F_int//reduction, kernel_size=3, stride=1, padding=1, bias=True, groups=F_int//reduction),
+		        nn.Conv2d(F_g, F_int//reduction, kernel_size=1, bias=True),
+                        nn.Conv2d(F_int//reduction, F_int//reduction, kernel_size=3, stride=1, padding=1, bias=True, groups=F_int//reduction),
                         nn.ReLU(inplace=True),
                         nn.Conv2d(F_int//reduction, F_int, kernel_size=1, bias=True),
+                        norm_layer(F_int) 
                         )
         self.norm = norm_layer(F_int)
         
